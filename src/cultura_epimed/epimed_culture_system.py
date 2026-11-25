@@ -1,11 +1,13 @@
 from pathlib import Path
 
-from DocxToExcelConverter import DocxToExcelConverter
-from FolderService import FolderService
-from MergeService import MergeService
+from cultura_epimed.services.docx_to_excel_converter import (
+    DocxToExcelConverter
+)
+from cultura_epimed.services.folder_service import FolderService
+from cultura_epimed.services.merge_service import MergeService
 
 
-class EpimedCulturaSystem:
+class EpimedCultureSystem:
 
     def __init__(self, root_path: Path | None = None):
 

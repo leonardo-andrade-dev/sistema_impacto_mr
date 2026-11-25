@@ -14,9 +14,10 @@ class FolderService:
 
     def create_folders(self):
 
-        self.clear_folders()
-
-        self.culturas.mkdir(exist_ok=True)
+        self.culturas.mkdir(
+            parents=True,
+            exist_ok=True
+        )
         self.dados_epimed.mkdir(exist_ok=True)
         self.xlsx.mkdir(exist_ok=True)
         self.saida.mkdir(exist_ok=True)

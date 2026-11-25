@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cultura-epimed"
+version = "0.1.0"
+description = "Sistema de cruzamento de dados de Cultura e Epimed"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.2,<2.3",
+    "numpy<2",
+    "python-dateutil<3",
+    "python-docx",
+    "openpyxl",
+    "Unidecode",
+]
+
+[project.optional-dependencies]
+xls = ["xlrd"]
+build = ["pyinstaller"]
+
+[project.gui-scripts]
+cultura-epimed = "cultura_epimed.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cultura_epimed = ["assets/*.png"]
